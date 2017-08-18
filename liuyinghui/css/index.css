@@ -1,0 +1,840 @@
+*{
+    padding:0;
+    margin:0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.container{
+    overflow: hidden;
+}
+.begin{
+    width: 100%;
+    height: 100%;
+    margin:0 auto;
+    overflow: hidden;
+}
+.bannerbox{
+    width: 100%;
+    position: relative;
+    height: 600px;
+}
+.bannerbox>ul{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.bannerbox>ul>li{
+    position: absolute;
+    left:0;
+    top:0;
+    text-align: center;
+    width: 100%;
+    height: 600px;
+    transition: all .5s linear;
+}
+@keyframes leftout {
+    0%{
+        left: 0;
+    }
+    100%{
+        left:-100%;
+    }
+}
+@keyframes leftin{
+    0%{
+        left:100%;
+    }
+    100%{
+        left:0;
+    }
+}
+@keyframes rightout {
+    0%{
+        left: 0;
+    }
+    100%{
+        left:100%;
+    }
+}
+@keyframes rightin{
+    0%{
+        left:-100%;
+    }
+    100%{
+        left:0;
+    }
+}
+.leftout{
+    animation: leftout 1s linear forwards;
+}
+.leftin{
+    animation: leftin 1s linear forwards;
+}
+.rightout{
+    animation: rightout 1s linear forwards;
+}
+.rightin{
+    animation: rightin 1s linear forwards;
+}
+.bannerbox>ul>li>div{
+    padding-top: 20%;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.bannerbox>ul>li>div>p{
+    color: #fff;
+    font-size: 2.5em;
+    z-index: 2;
+}
+.bannerbox>ul>li>div>span{
+    color: #fff;
+    font-size:2em;
+    z-index: 2;
+    padding:1em 0 2em;
+    display: block;
+}
+.bannerbox>ul>li>div .pink{
+    width: 150px;
+    height: 35px;
+    font-size: 12px;
+    color: #fff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: #ff2f68;
+    text-align: center;
+    position: relative;
+    left:45%;
+}
+.bannerbox>ul>li>div .white{
+    position: absolute;
+    bottom: 1em;
+    right:3em;
+    color:#fff;
+    padding-top:8em;
+    text-align: right;
+    letter-spacing: 7px;
+}
+.bannerbox>ul>li:first-child{
+    background: url(../img/bann1.jpg) no-repeat;
+    z-index:1;
+    background-size: cover;
+    width:100%;
+    height:100%;
+}
+.bannerbox>ul>li:nth-child(2){
+    background: url(../img/bann2.jpg) no-repeat;
+    background-size: cover;
+    width:100%;
+    height:100%;
+}
+.bannerbox>ul>li:nth-child(3) {
+    background: url(../img/bann3.jpg) no-repeat;
+    background-size: cover;
+    width:100%;
+    height:100%;
+}
+.bannerbox h2{
+    list-style: none;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 88px;
+    top: 4%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 0 70px;
+    color: #fff;
+    line-height: 88px;
+    box-sizing: border-box;
+}
+.bannerbox h2>div{
+    float:left;
+    box-sizing: border-box;
+}
+.bannerbox h2>div:first-child{
+    font-size: 1.5em;
+    float: left;
+    box-sizing: border-box;
+}
+.bannerbox h2>div:first-child>i{
+    font-size: 0.8em;
+    letter-spacing: normal;
+    line-height: 30px;
+}
+.bannerbox h2>div:nth-child(2){
+    font-size: 0.8em;
+    margin-left: 64px;
+    box-sizing: border-box;
+}
+.bannerbox h2>div:nth-child(3){
+    font-size: 1.2em;
+    margin-left: 64px;
+    box-sizing: border-box;
+}
+.bannerbox h2>div:nth-child(3)>i{
+    margin-right: 32px;
+}
+.bannerbox h2>div:nth-child(4){
+    position: fixed;
+    top:1.5em;
+    right: 2.5em;
+    box-sizing: border-box;
+    color: #ff2f68;
+}
+.guding{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: 99999;
+    color:#fff;
+    padding:0 3em;
+}
+.guding>div:first-child{
+    position: absolute;
+    left: 1.5em;
+    top:50%;
+    margin-top: -4em;
+}
+.guding>div:first-child>p{
+    color: #FF2F68;
+    transform: rotate(-90deg) translateX(70px);
+}
+.guding>div:first-child>span{
+    display: block;
+    transform: rotate(-90deg) translateX(-20px);
+}
+.guding>div>ul{
+    position: absolute;
+    right: 3em;
+    top:50%;
+    margin-top: -8em;
+}
+.guding>div>ul .dian{
+    width: 10px;
+    height: 10px;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+    margin:1.5em 0;
+}
+.guding>div>ul .dian1{
+    background: #30BDFD;
+    border: 2px solid #30BDFD;
+}
+.guding>div>ul .jiantou{
+    width: 26px;
+    height: 26px;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    transform: rotate(45deg) translateX(-30px) translateX(15px);
+}
+.guding>div>ul .jiantou1{
+    transform: rotate(225deg) translateX(0px) translateY(-10px);
+}
+.dianji{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.25);
+    background: red;
+    color:green;
+    display: none;
+    position: relative;
+    left: 0;
+
+}
+.dianji>div{
+    padding: 20px;
+}
+.dianji>div>p{
+    font-size: 1.4em;
+    color: #ff2f68;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 1em;
+}
+.dianji>div div{
+    color: #555;
+    font-size: 1em;
+    line-height: 2em;
+    margin: 0.9em 0 1em 0;
+    letter-spacing: 0.5px;
+}
+/*关于我们开始*/
+.about{
+    padding: 2em 0 0em;
+    height: 100%;
+}
+.about h3{
+    font-size: 3em;
+    color: #000;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-align: center;
+    text-transform: capitalize;
+}
+.resp-vtabs{
+    height: auto;
+    padding-bottom: 3em;
+}
+.about .features-w3ls {
+    font-size: 1.1em;
+    color: #545151;
+    line-height: 1.9em;
+    text-align: center;
+    padding-bottom: 1.2em;
+}
+ul.resp-tabs-list {
+    float: left;
+    width: 100%;
+    height: auto;
+    padding-bottom: 1em;
+}
+.resp-vtabs .resp-tab-item{
+    display: inline-block;
+    padding: 17px 10px !important;
+    cursor: pointer;
+    float: left;
+    background: #fff;
+    border: 2px solid transparent;
+    letter-spacing: 1px;
+    color: #00bfff;
+    text-align: center;
+}
+.resp-vtabs .resp-tab-active{
+    border: 2px solid #00bfff;
+    border-bottom: transparent;
+    z-index: 1;
+    margin-right: 0;
+    color: #ff2f68;
+}
+.w3agile_tabs{
+    height:auto;
+
+}
+.resp-vtabs .w3agile_tabs .w3agile_tab_right{
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 3em;
+}
+.resp-vtabs .w3agile_tab_right img{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: 2px solid rgba(255, 47, 104, 0.18);
+
+}
+.resp-accordion{
+    display: none;
+}
+
+/*图片展览*/
+.row-img{
+
+}
+.row1 .row-img>img{
+    width: 33.3%;
+    height: 100%;
+    display: block;
+}
+.row1{
+    padding:2em 0;
+    width: 100%;
+    height: 100%;
+}
+.row1>div{
+    float: left;
+}
+.row1>div:first-child{
+    height: 100%;
+}
+.row1>div:nth-child(2){
+    padding: 3.1em 3em 3.1em 3em;
+    background: #000;
+    color:#fff;
+    text-align: center;
+    position: relative;
+    height: 100%;
+}
+.row1>div:nth-child(2)>h2{
+    padding-top: 1em;
+    font-size: 1.5em;
+    color: #ff2f68;
+    margin-bottom: 0.5em;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+.row1>div:nth-child(2)>div{
+    z-index: 1;
+    margin: 1.2em 0 3em;
+    color: #636363;
+}
+.row1>div:nth-child(2)>span{
+    font-size: 1.5em;
+}
+.row1>div:nth-child(2)>ul{
+    position: absolute;
+    bottom: 1.5em;
+    /*width: 5em;*/
+    z-index: 5;
+    left:50%;
+    margin-left: -2.5em;
+}
+.row1>div:nth-child(2)>ul>li{
+    width: 13px;
+    height: 13px;
+    background: #bababa;
+    border-radius: 50%;
+    float: left;
+    margin-left: 15px;
+}
+.row1>div:nth-child(2)>ul .li-active{
+    background: #00bfff;
+}
+/*列表*/
+.row2{
+    padding: 0em 2em;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.row2>div:first-child{
+    margin-top: 3em;
+    height: 100%;
+}
+.row2>div:first-child>img{
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: block;
+}
+.row2>div:first-child>img:last-child{
+    margin-bottom: 2em;
+}
+.row2>div:nth-child(2){
+    margin-top: 3em;
+    padding: 2.6em 2em 2.65em 2em;
+    height: 100%;
+}
+.row2>div:nth-child(2)>div{
+    color: #ff2f68;
+    font-size: 1.8em;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+    margin: 1.5em 0 .5em!important;
+}
+.row2>div:nth-child(2)>span{
+    font-size: 1.1em;
+    color: #545151;
+    line-height: 1.9em;
+    margin: 1em 0 1.5em;
+}
+.row2>div:nth-child(2)>p{
+    font-size: 2.3em;
+    font-weight: 300;
+    color: #00bfff;
+    text-align: left;
+    letter-spacing: 1px;
+}
+.row2>div:nth-child(2)>ul>li>span{
+    display:inline-block;
+    font-size: 1.3em;
+    line-height: 2em;
+    color: rgba(255, 47, 104, 0.44);
+}
+.row2>div:nth-child(2)>ul>li>span:after{
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: rgba(76, 81, 82, 0.15);
+    margin-left: 1em;
+}
+.row2>div:nth-child(2)>ul>li{
+    font-size: 1.3em;
+}
+/*遇见教练*/
+.team{
+    width: 100%;
+    padding: 2em 0em 5em;
+    margin: 0 auto;
+    height: 100%;
+    overflow: hidden;
+}
+.agileits-team-grids{
+    width: 100%;
+    padding-top: 2em;
+    height: 100%;
+}
+.agileits-team-grids>div{
+    float: left;
+}
+.team>div>div>div
+.team>div>div>div>img{
+    width: 100%;
+    height:100%;
+    display: block;
+}
+.team>div>div>div{
+}
+.team h2{
+    list-style: none;
+    width: 100%;
+    font-size: 2em;
+    line-height: 2em;
+    margin: 0 auto;
+    text-align: center;
+}
+.team .jianju{
+    padding: 0 0.5em;
+    box-sizing: border-box;
+
+}
+.team .bbb{
+    position: relative;
+    width:100%;
+    height:100%;
+}
+.team .bb{
+    background-color: rgba(0, 0, 0, 0.66);
+    border: 3px solid #ff2f68;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.team .b{
+    height：130px;
+    background: #00bfff;
+    padding: 1em;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    transition: .5s all;
+}
+.team .b h4{
+
+}
+.team .b p{
+    color:#fff;
+}
+.team .b ul{
+    padding: 1em 0 0 0;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 110px;
+    display: flex;
+    justify-content: space-between;
+}
+.team .b ul li i {
+    display: inline-block;
+    height: 34px;
+    width: 34px;
+    line-height: 30px;
+    border: solid 2px #FFF;
+    background: none;
+    color: #FFF;
+    border-radius: 50%;
+    transition: 0.5s all;
+
+}
+.team .b ul li:first-child i:hover {
+    background: #3b5998;
+}
+.team .b ul li:nth-child(2) i:hover {
+    background: #55acee;
+}
+.team .b ul li:nth-child(3) i:hover {
+    background: #f26522;
+}
+.team .jianju>div>img{
+    width:100%;
+    height: 100%;
+}
+.team .jianju1>div{
+    margin-top: 3em;
+}
+
+/* */
+.Testimonials {
+    background: url(../img/test.jpg) no-repeat fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 4em 0;
+}
+.memeda{
+    width: 100%;
+}
+.memeda>div>img:first-child{
+    width: 100%;
+    height: 100%;
+    padding: 13px;
+    border: 2px solid rgba(255, 255, 255, 0.26);
+}
+.memeda>div>img:nth-child(2){
+    position: absolute;
+    border: 13px solid rgba(0, 0, 0, 0.31);
+    top: 43%;
+    left: -1%;
+    width: 98px;
+}
+.Testimonials h2{
+    font-size: 3em;
+    color: #FFF;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin:0em 0  0.6em;
+    text-align: center;
+    text-transform: capitalize;
+}
+.memeda .t-jianju{
+    padding: 0em 1em;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+}
+.memeda .title{
+    margin-top: 4em;
+    padding: 1.5em;
+    background: rgba(255, 255, 255, 0.22);
+}
+.title h5 {
+    margin-bottom: 0.5em;
+    color: #ff2f68;
+    font-size: 1.7em;
+    letter-spacing: 1px;
+}
+.title p {
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+/*swim开始*/
+.swim{
+    margin: 3em 0;
+    width: 100%;
+    overflow: hidden;
+}
+.swim>div>h3{
+    font-size: 3em;
+    color: #000;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 0.6em;
+    text-align: center;
+    text-transform: capitalize;
+}
+.price-block {
+    border:1px solid rgba(0,0,0,0.15);
+    transition: 0.5s all;
+    margin-bottom: 2em;
+}
+.price-gd-top {
+    text-align: center;
+    position: relative;
+}
+.price-gd-top img {
+    width: 100%;
+}
+.price-gd-top h4 {
+    font-size: 1.2em;
+    color: #fff;
+    padding: 0.4em 1em;
+    background: #00bfff;
+    font-weight: 300;
+    position: absolute;
+    top: 1.6em;
+    left: -1em;
+    letter-spacing: 1px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    box-shadow: 1px 1px 15px rgba(4, 4, 4, 0.18);
+}
+.price-gd-bottom {
+    background: #fff;
+    text-align: center;
+    padding: 1.8em 0em 1em;
+}
+.price-list p {
+    padding: 0px;
+    font-size: 15px;
+    letter-spacing: .5px;
+    color: #000;
+}
+.price-selet {
+    padding: 1em 0em;
+    text-align: center;
+    background: #fff;
+}
+.price-selet h3 {
+    font-size: 1.7em;
+    float: left;
+    margin-left: 20px;
+    color: #00bfff;
+}
+.price-selet h3 span {
+    color: #000;
+    font-size: 31px;
+    margin-right: 5px;
+}
+.price-selet a {
+    font-size: 12px;
+    color: #ffffff;
+    display: inline-block;
+    padding: 0.5em 2em;
+    background: #ff2f68;
+    text-decoration: none;
+    border: 2px solid #ff2f68;
+    box-shadow: 0 0 black;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.swim .price-grid{
+    /*width: 22%;*/
+    height: auto;
+    padding:0 15px;
+}
+.memeda1{
+    width: 100%;
+}
+/*底部*/
+.contact-w3ls {
+    width: 100%;
+    background: url(../img/test.jpg) no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    overflow: hidden;
+    padding: 5em 0 0em;
+}
+h3.title-w3-agileits {
+    font-size: 3em;
+    color: #FFF;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 0.6em;
+    text-align: center;
+    text-transform: capitalize;
+}
+.agileinfo_mail_grids h3 {
+    font-size: 1.5em;
+    color: #000000;
+    margin-bottom: 0.8em;
+    padding-left: 16px;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+/*copy*/
+.copy {
+    width: 100%;
+    text-align: center;
+    background: #000;
+}
+.copy p {
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding: 1.5em 0;
+    margin-top: 5em;
+}
+.agileinfo_mail_grids>div{
+    padding: 10px;
+    
+}
+.agileinfo_mail_grids form{
+    color:#fff;
+}
+.agileinfo_mail_grids form>div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.agileinfo_mail_grids form>div>input[type="text"],
+.agileinfo_mail_grids form>textarea,
+.agileinfo_mail_grids form>div>input[type="submit"]{
+    list-style: none;
+    font-size: 14px;
+    background: rgba(255,255,255,0.25);
+    padding: 13px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    color:#fff;
+}
+.agileinfo_mail_grids form>textarea{
+    width: 100%;
+    resize: none;
+    min-height: 200px;
+}
+.agileinfo_mail_grids form>div>input[type="text"]{
+    width: 45.9%;
+}
+.agileinfo_mail_grids form>div>input[type="submit"]{
+    width: 45.9%;
+    background: #ff2f68;
+    padding:13px;
+    text-align: center;
+    font-size: 16px;
+}
+.neirong .glyphicon{
+    display: block;
+    float: left;
+    font-size: 1.5em;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 13px 17px;
+    color: #000;
+    margin-right: 2em;
+}
+.agileinfo_mail_grids>div .agi-right .zhanwei1{
+    padding: 0px;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 2em;
+}
+.agileinfo_mail_grids>div .agi-right .zhanwei1>div>p{
+    font-size: 1.3em;
+    margin-bottom: 0.3em;
+    text-shadow: 1px 1px 2px #000;
+}
+.agileinfo_mail_grids>div .agi-right .zhanwei1>div{
+    float: left;
+    color: #fff;
+}
+.agi-right{
+    width: 100%;
+}
+
+/*三角固定*/
+
+.arr{
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 99999999;
+}
+/*标题栏*/
+#m_nav_container {
+    width: 100%;
+    height: 82px;
+    background-color: #ff2f68;
+    position: fixed;
+    display: block;
+    top: 35px;
+    left: 0;
+    text-align: center;
+    z-index: 10000000;
+}
