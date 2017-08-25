@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="leftbar">
+        <ul>
+            <h3>TODOLIST</h3>
+            <li class="searchwait">查看待办事项</li>
+            <li class="searchdone">查看已完成事项</li>
+            <li class="addsubmit searchadd">添加</li>
+        </ul>
+    </section>
+    <div class="main">
+        <div class="maininner">
+            <div class="container">
+                <div class="add">
+                    <h3>添加新的事项</h3>
+                    <label>
+                        <textarea id="text"></textarea>
+                        <div class="notice"><span>00</span>/40</div>
+                    </label>
+                    <input type="button" id="submit" value="提交">
+                    <div class="close">关闭</div>
+                </div>
+                <div class="wait item">
+                    <input type="button" value="全不选" class="fuxuan none">
+                    <input type="button" value="全选" class="fuxuan all">
+                    <h3>未完成事项</h3>
+                    <ul></ul>
+                    <div class="btn">
+                        <input type="button" class="movedone" value="移动到已完成">
+                        <input type="button" class="addsubmit" value="添加">
+                    </div>
+                </div>
+                <div class="done item">
+                    <input type="button" value="全不选" class="fuxuan none">
+                    <input type="button" value="全选" class="fuxuan all">
+                    <h3>已完成事项</h3>
+                    <ul></ul>
+                    <div class="btn">
+                        <input type="button" class="clearbtn" value="清除">
+                        <input type="button" class="addsubmit" value="添加">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/1.11.js"></script>
+<script src="js/main.js"></script>
+</html>

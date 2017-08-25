@@ -50,3 +50,31 @@ Item.prototype = {
   button.addEventListener('click', changeColor);
 });
 var head=document.querySelector("header");
+
+{
+  let cons = document.querySelectorAll(".floor");
+  let lefts = document.querySelectorAll(".menu-item");
+  let obj = document.documentElement.scrollTop == 0 ? document.body : document.documentElement;
+  window.addEventListener("scroll", function () {
+    //点击滚动
+    lefts.forEach(function (value, index) {
+      lefts[index].onclick = function () {
+        let ot = cons[index].offsetTop;
+        obj.scrollTop = ot;
+        animate(obj, {scrollTop: ot}, 2000);
+      }
+    });
+  });
+}
+{
+  let life = document.querySelector(".life");
+  let zhuyao=document.querySelectorAll(".zhuyao-1");
+  console.log(zhuyao);
+  console.log(life);
+  // window.addEventListener("scroll", function (value) {
+  //   //点击滚动
+  //
+  //
+  // });
+}
+

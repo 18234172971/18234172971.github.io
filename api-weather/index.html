@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天气预报</title>
+</head>
+<style>
+    *{
+        list-style: none;
+        padding:0;
+        margin:0;
+    }
+    .main>p{
+        width: 300px;
+        margin:10px auto;
+
+    }
+    .main .big{
+        font-size: 12px;
+        margin:30px auto;
+        width: 718px;
+        background-image: -webkit-linear-gradient(top, rgb(24, 50, 89), rgb(52, 130, 186));
+        height: 304px;
+        opacity: 1;
+        color:#fff;
+        position: relative;
+    }
+    .op_weather4_twoicon_today,.op_weather4_twoicon_day {
+        /*position: absolute;*/
+        width: 89px;
+        height: 250px;
+        text-decoration: none;
+        color: #fff;
+        border: none;
+        z-index: 20;
+        outline: none;
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        color:red;
+    }
+    .op_weather4_twoicon_today{
+        width: 186px;
+        position: absolute;
+        left:0;
+        top:0;
+    }
+    .op_weather4_twoicon_day{
+        width: 89px;
+    }
+    .op_weather4_twoicon_today .op_weather4_twoicon_date {
+        text-align: left;
+        margin: 1px 0 0 12px;
+        width: 300px;
+    }
+    .op_weather4_twoicon p {
+        text-align: center;
+        font-size: 12px;
+        text-shadow: 1px 1px 1px #555;
+        line-height: 1em;
+    }
+    .op_weather4_twoicon_wind {
+        margin-top: 11px;
+    }
+    .op_weather4_twoicon_weath {
+        z-index: 12;
+        margin-top: 12px;
+    }
+    .op_weather4_twoicon_today .op_weather4_twoicon_temp {
+        margin-top: 8px;
+    }
+    .op_weather4_twoicon_shishi {
+        text-align: center;
+    }
+    .op_weather4_twoicon_shishi_title {
+        font-size: 48px;
+        line-height: 64px;
+        display: inline-block;
+        font-family: Arial;
+        text-shadow: 1px 1px 1px #555;
+    }
+    .op_weather4_twoicon_shishi_data {
+        position: relative;
+        display: inline-block;
+    }
+    .op_weather4_twoicon_shishi_sup,.op_weather4_twoicon_shishi_sub {
+        display: block;
+        text-align: left;
+        font-style: normal;
+        text-shadow: 1px 1px 1px #555;
+    }
+    .op_weather4_twoicon_split {
+        position: absolute;
+        top: 58px;
+        width: 1px;
+        height: 180px;
+        background: #fff;
+        opacity: 0.15;
+    }
+    .op_weather4_twoicon_hover {
+        z-index: -1;
+        position: absolute;
+        width: 89px;
+        height: 250px;
+    }
+    .op_weather4_twoicon_date {
+        margin-top: 56px;
+    }
+    .op_weather4_twoicon_date_day {
+        margin-top: 8px;
+        opacity: 0.5;
+        text-shadow: none;
+    }
+    p>span{
+        display: inline-block;
+    }
+    .memeda>span{
+        padding: 0 5px;
+    }
+    #img{
+        width:50px;
+        height: 50px;
+        margin:0 auto;
+    }
+    #img>img{
+        width: 100%;
+        height: 100%;
+    }
+    .op_weather4_twoicon_day:hover{
+        background-image: linear-gradient(to bottom,transparent 0, rgba(255,255,255,.2) 100%);
+    }
+    .can{
+        position: absolute;
+        top:250px;
+        width:718px;
+        height: 114px;
+        background: rgba(255,255,255,0.1);
+    }
+    .tianqi{
+        position: absolute;
+        left:186px;
+        top:0;
+        display: flex;
+        justify-content: space-around;
+    }
+    .inner{
+        height:250px;
+    }
+    ul.time-2{
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+    }
+    ul.time-2 li {
+        width: 78px;
+        list-style: none;
+        float: left;
+        background: rgba(255,255,255,0.2);
+        text-align: center;
+        line-height: 26px;
+        margin-right: 1px;
+        font-size: 12px;
+        cursor: pointer;
+        display: block;
+    }
+    .op_weather4_xlCanvascon1{
+        position: relative;
+        margin-left: 36px;
+    }
+    ul.time-1{
+        width: 520px;
+        position: absolute;
+        left: 50px;
+        bottom: 0px;
+    }
+    ul.time-1 li {
+        float: left;
+        list-style: none;
+        width: 56px;
+        text-align: left;
+        color: #fff;
+    }
+    ul.time-left{
+        float: left;
+        height: 86px;
+        width: 35px;
+    }
+    ul.time-left li{
+        padding-top: 4px;
+        text-align: right;
+        position: relative;
+    }
+    ul.time-left li i{
+        display: inline-block;
+        position: absolute;
+        top:50%;
+        margin-top: 5px;
+        width: 480px;
+        height: 1px;
+        background: #fff;
+        opacity: 0.15;
+    }
+    canvas ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    canvas  ul li{
+        position: absolute;
+        width:40px;
+        color:red;
+        height: 20px;
+        left:0;
+        top:0;
+    }
+</style>
+<body>
+<div class="main">
+    <h1><p id="chengshi"></p>天气预报</h1>
+    <p>
+        省份/市:<select id="province"></select>
+        市/区:<select name="" id="city"></select>
+    </p>
+    <div class="big">
+        <div class="inner">
+            <div class="op_weather4_twoicon_today OP_LOG_LINK">
+                <p class="op_weather4_twoicon_date memeda" ><span id="date"></span><span id="week"></span></p>
+                <p class="op_weather4_twoicon_date op_weather4_twoicon_pm25">实时空气质量 <span id="aqi"></span><span id="quality">良</span></p>
+                <div class="op_weather4_twoicon_shishi">
+                    <div class="op_weather4_twoicon_icon"></div>
+                    <div class="op_weather4_twoicon_shishi_info">
+                        <span class="op_weather4_twoicon_shishi_title" id="temp"></span>
+                        <span class="op_weather4_twoicon_shishi_data">
+                        <i>℃</i>
+                        <i id="weather2">实时</i>
+                    </span>
+                    </div>
+                </div>
+                <div id="img"><img  src="" alt=""></div>
+                <p class="op_weather4_twoicon_temp" ><span id="templow"></span> ~ <span id="temphigh"></span>℃</p>
+                <p class="op_weather4_twoicon_weath" id="weather1">
+                </p>
+                <p class="op_weather4_twoicon_wind"><span class="winddirect1"></span><span class="windpower1"></span></p>
+            </div>
+            <div class="tianqi">
+                <div class="op_weather4_twoicon_day OP_LOG_LINK">
+                    <div class="op_weather4_twoicon_hover"></div>
+                    <div class="op_weather4_twoicon_split"></div>
+                    <p class="op_weather4_twoicon_date" id="week">周四</p>
+                    <p class="op_weather4_twoicon_date_day" id="date">08月17日</p>
+                    <div id="img"><img src="" alt=""></div>
+                    <p class="op_weather4_twoicon_temp" ><span id="templow"></span> ~ <span id="temphigh"></span>℃</p>
+                    <p class="op_weather4_twoicon_weath" id="weather1"></p>
+                    <p class="op_weather4_twoicon_wind"><span class="winddirect1"></span><span class="windpower"></span></p>
+                </div>
+                <div class="op_weather4_twoicon_day OP_LOG_LINK">
+                    <div class="op_weather4_twoicon_hover"></div>
+                    <div class="op_weather4_twoicon_split"></div>
+                    <p class="op_weather4_twoicon_date" id="week">周四</p>
+                    <p class="op_weather4_twoicon_date_day" id="date">08月17日</p>
+                    <div id="img"><img src="" alt=""></div>
+                    <p class="op_weather4_twoicon_temp" ><span id="templow"></span> ~ <span id="temphigh"></span>℃</p>
+                    <p class="op_weather4_twoicon_weath" id="weather1"></p>
+                    <p class="op_weather4_twoicon_wind"><span class="winddirect1"></span><span class="windpower1"></span></p>
+                </div>
+                <div class="op_weather4_twoicon_day OP_LOG_LINK">
+                    <div class="op_weather4_twoicon_hover"></div>
+                    <div class="op_weather4_twoicon_split"></div>
+                    <p class="op_weather4_twoicon_date" id="week">周四</p>
+                    <p class="op_weather4_twoicon_date_day" id="date">08月17日</p>
+                    <div id="img"><img src="" alt=""></div>
+                    <p class="op_weather4_twoicon_temp" ><span id="templow"></span> ~ <span id="temphigh"></span>℃</p>
+                    <p class="op_weather4_twoicon_weath" id="weather1"></p>
+                    <p class="op_weather4_twoicon_wind"><span class="winddirect1"></span><span class="windpower1"></span></p>
+                </div>
+                <div class="op_weather4_twoicon_day OP_LOG_LINK">
+                    <div class="op_weather4_twoicon_hover"></div>
+                    <div class="op_weather4_twoicon_split"></div>
+                    <p class="op_weather4_twoicon_date" id="week">周四</p>
+                    <p class="op_weather4_twoicon_date_day" id="date">08月17日</p>
+                    <div id="img"><img src="" alt=""></div>
+                    <p class="op_weather4_twoicon_temp" ><span id="templow"></span> ~ <span id="temphigh"></span>℃</p>
+                    <p class="op_weather4_twoicon_weath" id="weather1"></p>
+                    <p class="op_weather4_twoicon_wind"><span class="winddirect1"></span><span class="windpower1"></span></p>
+                </div>
+                <div class="op_weather4_twoicon_day OP_LOG_LINK">
+                    <div class="op_weather4_twoicon_hover"></div>
+                    <div class="op_weather4_twoicon_split"></div>
+                    <p class="op_weather4_twoicon_date" id="week">周四</p>
+                    <p class="op_weather4_twoicon_date_day" id="date">08月17日</p>
+                    <div id="img"><img src="" alt=""></div>
+                    <p class="op_weather4_twoicon_temp" ><span id="templow"></span> ~ <span id="temphigh"></span>℃</p>
+                    <p class="op_weather4_twoicon_weath" id="weather1"></p>
+                    <p class="op_weather4_twoicon_wind"><span class="winddirect1"></span><span class="windpower1"></span></p>
+                </div>
+                <div class="op_weather4_twoicon_day OP_LOG_LINK">
+                    <div class="op_weather4_twoicon_hover"></div>
+                    <div class="op_weather4_twoicon_split"></div>
+                    <p class="op_weather4_twoicon_date" id="week">周四</p>
+                    <p class="op_weather4_twoicon_date_day" id="date">08月17日</p>
+                    <div id="img"><img src="" alt=""></div>
+                    <p class="op_weather4_twoicon_temp" ><span id="templow"></span>~<span id="temphigh"></span>℃</p>
+                    <p class="op_weather4_twoicon_weath" id="weather1"></p>
+                    <p class="op_weather4_twoicon_wind"><span class="winddirect1"></span><span class="windpower1"></span></p>
+                </div>
+            </div>
+        </div>
+        <!--<div class="can">-->
+            <!--<div class="op_weather4_xlleft">-->
+            <!--</div>-->
+            <!--<div class="op_weather4_xlCanvascon1">-->
+            <!--</div>-->
+            <!--<div class="op_weather4_xltimeul">-->
+                <!--<ul class="time-1">-->
+                    <!--<li>现在 <time></time></li>-->
+                    <!--<li> <time>23点</time></li>-->
+                    <!--<li><time>2 </time></li>-->
+                    <!--<li> <time>5</time></li>-->
+                    <!--<li> <time>8</time></li>-->
+                    <!--<li>  <time>11</time></li>-->
+                    <!--<li><time>14 </time></li>-->
+                    <!--<li> <time>17</time></li>-->
+                    <!--<li> <time>20</time></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+        <ul class="time-2">
+            <li>24小时温度</li>
+            <li>风力风向</li>
+            <li>降水量</li>
+            <li>相关指数</li>
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>
+<script src="jquery.js"></script>
+<script>
+    var provinces=[];
+    var citys=[];
+    var data=[];
+    $.ajax({
+        url:"http://api.jisuapi.com/weather/city",
+        data:{appkey:"5b7a59ae52adff68"},
+        dataType:"jsonp",
+        success:function (r) {
+            data=r.result;
+            console.log(r);
+            provinces=$.grep(r.result,function (value,index) {//grep过滤
+                if(value.parentid==="0"){
+                    return  true;
+                }
+            });
+            $.each(provinces,function (index,value) {
+                $("<option>").html(value.city).val(value.cityid).appendTo("#province")
+            })
+        }
+    })
+    $("#province").on("change blur",function () {
+        var id=$(this).val();
+        citys=$.grep(data,function (value) {
+            if(value.parentid===id){
+                return true;
+            }
+        })
+       $("#city").empty();
+        $.each(citys,function (index,value) {
+            $("<option></option>").html(value.city).appendTo("#city");
+        })
+    })
+    $("#city").on("change blur",function () {
+        var city=$(this).val();
+        $.ajax({
+            url:"http://api.jisuapi.com/weather/query",
+            data:{city:city,appkey:"5b7a59ae52adff68"},
+            dataType:"jsonp",
+            success:function (r) {
+                var result=r.result;
+                console.log(r);
+                var divs=$(".op_weather4_twoicon_day");
+                $("#aqi").html(`${result.aqi.aqi}`);
+                $("#quality").html(`${result.aqi.quality}`);
+                $("#temp").html(`${result.temp}`);
+                $("#img").html(`<img src="img/天气图标/weathercn/${result.img}.png">`);
+                $("#chengshi").html(`${result.city}`);
+                $("#date").html((result.date).slice(5, 7) + "月" + (result.date).slice(8, 10) + "日")
+                $("#week").html(`${result.week}`);
+                $("#time").html(`${result.time}`);
+                $(".windpower1").html(`${result.windpower}`);
+                $("#weather1").html(`${result.weather}`);
+                $("#weather2").html(`${result.weather}(实时)`);
+                $("#temphigh").html(`${result.temphigh}`);
+                $("#templow").html(`${result.templow}`);
+                $(".winddirect1").html(`${result.winddirect}`);
+                $.each(divs,function (index,v) {
+                    var value=index+1;
+                    $(this).find("#week").html(result.daily[value].week).parent()
+                        .find("#date").html((result.daily[value].date).slice(5, 7) + "月" + (result.daily[value].date).slice(8, 10) + "日").parent()
+                        .find("#img>img").prop("src", "img/天气图标/weathercn/" + result.daily[value].day.img + ".png").parent().parent()
+                        .find("#templow").html(result.daily[value].night.templow).parent().parent()
+                        .find("#temphigh").html(result.daily[value].day.temphigh).parent().parent()
+                        .find("#weather1").html(result.daily[value].day.weather).parent().parent()
+                        .find(".winddirect1").html(result.daily[value].day.winddirect).parent().parent()
+                        .find(".windpower1").html(result.daily[value].day.windpower);
+                })
+//                var canvas=document.querySelector("canvas");
+//                var cobj=canvas.getContext("2d");
+//                cobj.lineWidth=1;
+//                cobj.strokeStyle="#fff";
+//                for(var i=1;i<6;i++){
+//                    cobj.beginPath();
+//                    cobj.moveTo(0,i*17);
+//                    cobj.lineTo(480,i*17);
+//                    cobj.stroke()
+//                }
+                function posi1(i,wendu) {
+                    top=(43-wendu)*6/18;
+                    return top;
+                }
+                function posi2(i,wendu) {
+                    left=i*480/9+480/9/2;
+                    return left;
+                }
+                var lis=$(".time-1 li");
+                console.log(lis);
+                $.each(lis,function (index,v) {
+                    var value=index;
+                    console.log(value);
+                    var hours=result.hourly;
+                    console.log(hours);
+                    var tep=result.hourly[index].temp;
+                    $(this).find(".timelist").html(tep+"℃").css({position:"absolute",top:"posi1(index,tep)"+"px",left:"posi1(index,tep)"+"px"}).parent();
+                    $(this).find("time").html(result.hourly[index].time).slice(1, 3) + "点" ;
+                })
+            }
+        })
+    })
+
+
+</script>

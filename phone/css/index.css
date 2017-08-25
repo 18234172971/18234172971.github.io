@@ -1,0 +1,197 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+    color:#000;
+}
+body{
+    background: url(../img/6.jpg) repeat ;
+    background-size: cover;
+
+}
+@font-face {
+    font-family: 'iconfont';  /* project id 382246 */
+    src: url('//at.alicdn.com/t/font_382246_27v4mqx6uaj7nwmi.eot');
+    src: url('//at.alicdn.com/t/font_382246_27v4mqx6uaj7nwmi.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_382246_27v4mqx6uaj7nwmi.woff') format('woff'),
+    url('//at.alicdn.com/t/font_382246_27v4mqx6uaj7nwmi.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_382246_27v4mqx6uaj7nwmi.svg#iconfont') format('svg');
+}
+i{
+    font-family: 'iconfont';
+    color: #000;
+    font-size:22px;
+    font-style: normal;
+}
+/*头部开始*/
+section.leftbar{
+    width:100%;
+    height:0.6rem;
+    background: #FED3DA;
+    border-radius:0 0 10px 10px;
+    /*box-shadow: 0 3px 3px rgba(194, 194, 194, 0.98);*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+section.leftbar span{
+    font-size:16px;
+    color: #000;
+}
+ h3{
+    font-size: 18px;
+    color: #000;
+     text-align: center;
+}
+.item ul li>i.active{
+    color:orange;
+}
+/*头部结束*/
+
+
+/*main开始*/
+
+.container{
+    width:350px;
+    height:300px;
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /* box-shadow: 0px 0px 3px; */
+    background: #fff;
+    border-radius: 10px;
+}
+.container .add{
+    width:100%;
+    height:2rem;
+    /*background:blue;*/
+    text-align:center;
+    color: #d0801c;
+    padding-top:0.5rem;
+    /*display: none;*/
+    position: relative;
+    /*display: none;*/
+}
+.container textarea{
+    /*width:2.1rem;*/
+    height:50%;
+    margin-top: 0.2rem;
+    border: 1px solid #ccc
+}
+.con p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+label{
+    position: relative;
+}
+.notic{
+    position: absolute;
+    bottom:0.2rem;
+    right:0.2rem;
+    color:#666;
+}
+.guanbi{
+    position: absolute;
+    top:0.1rem;
+    right:0.1rem;
+    width:0.2rem;
+    height:0.2rem;
+    font-family: 'iconfont';
+
+}
+.container .wait{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    display: none;
+}
+.container .done{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    display: none;
+
+}
+.container  .wait .con {
+    width:90%;
+    height:50%;
+    background: #eff3ef;
+    margin:0.2rem auto;
+}
+.container .done .con{
+    width:90%;
+    height:50%;
+    background: #eff3ef;
+    margin:0.2rem auto;
+
+}
+.container .bottom{
+    display: flex;
+    justify-content: space-around;
+}
+.container .btn{
+    width:1rem;
+    height:0.4rem;
+    border-radius: 15px;
+    border: 0;
+    background: #FED3DA;
+    color:#fff;
+    font-size: 16px;
+}
+.container .wait ul li{
+    display: flex;
+    justify-content: space-around;
+}
+.container .done ul li{
+    display: flex;
+    justify-content: space-around;
+}
+.container .wait ul li input{
+     margin-top: 0.05rem;
+ }
+.container .done ul li input{
+    margin-top: 0.05rem;
+}
+/*main结束*/
+
+
+/*底部开始*/
+footer{
+    width:100%;
+    height:0.6rem;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    background: #FED3DA;
+    display: none;
+
+}
+footer ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+footer li{
+    width:1.2rem;
+    height:0.3rem;
+    border: 1px solid  #FED3DA;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 0.15rem;
+    line-height: 0.3rem;
+
+}
+/*底部结束*/

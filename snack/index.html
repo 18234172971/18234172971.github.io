@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>贪吃蛇</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        text-decoration: none;
+        list-style: none;
+    }
+    .contain{
+        width:684px;
+        height:500px;
+        margin:10px auto;
+        position: relative;
+    }
+    .scene {
+        width: 500px;
+        height: 500px;
+        border: 1px solid #ccc;
+        float:left;
+        background: url(img/11.jpg) no-repeat center center;
+    }
+    .block {
+        width: 25px;
+        height: 25px;
+        box-sizing: border-box;
+        border-radius: 50%;
+        float: left;
+    }
+    .snackbody{
+        background-image: url("img/body.png");
+        background-size: 100% 100%;
+    }
+    .snackheadr{
+        background: url("img/head.png");
+        background-size: cover;
+        transform: rotate(-90deg);
+    }
+    .snackheadl{
+        background: url("img/head.png");
+        background-size: cover;
+        transform: rotate(90deg);
+    }
+    .snackheadt{
+        background: url("img/head.png");
+        background-size: cover;
+        transform: rotate(180deg);
+    }
+    .snackheadb{
+        background: url("img/head.png");
+        background-size: cover;
+    }
+
+    .food{
+        background: url("img/1.png");
+        background-size: cover;
+    }
+    .right{
+        width:180px;
+        height:500px;
+        border:1px solid #ccc;
+        border-left: 0;
+        float:left;
+    }
+    .show{
+        width:100px;
+        margin:0 auto;
+        margin-top:20px;
+    }
+    .show .con{
+        width:100px;
+        height:30px;
+        font-size:12px;
+        color:#000;
+        text-align: center;
+        line-height:30px;
+    }
+    .show .title{
+        width:100px;
+        height:30px;
+        font-size:12px;
+        color:#000;
+        text-align: center;
+        line-height:30px;
+        border:1px solid #000;
+    }
+    .btn{
+        width:100px;
+        height:30px;
+        font-size:12px;
+        color:#000;
+        text-align: center;
+        line-height:30px;
+        border:1px solid #000;
+        margin:0 auto;
+        margin-top:20px;
+    }
+    .letter{
+        width:80px;
+        height:80px;
+        background: no-repeat;
+        background-size:contain;
+        position:absolute;
+    }
+    ul{
+        margin:10px auto;
+    }
+    li{
+        padding:10px 0;
+        text-align: center;
+        font-size:16px;
+    }
+</style>
+<body>
+<div class="contain">
+    <div class="scene"></div>
+    <div class="right">
+        <div class="show">
+            <div class="con" >分数</div>
+            <div class="title" id="score">0</div>
+        </div>
+        <div class="show">
+            <div class="con" >关卡</div>
+            <div class="title" id="state">1</div>
+        </div>
+        <div class="btn" id="start">开始</div>
+        <div class="btn" id="stop">暂停</div>
+    </div>
+</div>
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/index.js"></script>
+</html>

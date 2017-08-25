@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scal=1,user-scalable=no">
+    <link rel="stylesheet" href="css/index.css">
+
+
+</head>
+<body>
+<section class="leftbar">
+
+    <span>查看</span>
+    <h3>TODOLIST</h3>
+    <i>&#xe737;</i>
+    <!--<ul>
+        <li>查看待办事项</li>
+        <li>查看已完成事项</li>
+    </ul>-->
+</section>
+
+<div class="main">
+    <div class="container">
+        <div class="add item">
+            <h3 style="margin-bottom:0.1rem">添加新的事项</h3>
+            <label>
+                <textarea autofocus id="text" ></textarea>
+                <div class="notic notice"><span>00</span><span>/40</span></div>
+            </label>
+            <input type="button" value="提交" id="submit" class="btn" style="width:100px; height:40px;background: #FED3DA;text-align: center;border: 0;display: block;margin:40px auto;border-radius:10px;color:#fff;font-size:16px">
+            <div class="guanbi close">&#xe641;</div>
+        </div>
+        <div class="wait item">
+            <h3 style="padding-top:15px">未完成</h3>
+            <ul class="con">
+            </ul>
+            <div class="bottom">
+                <input type="button" value="移动到已完成" class="yidong movebtn btn">
+                <input type="button" value="添加" class="tianjia btn addbtn">
+            </div>
+        </div>
+        <div class="done item">
+            <h3 style="padding-top:15px">已完成</h3>
+            <ul class="con">
+            </ul>
+            <div class="bottom">
+                <input type="button" value="清除" class="qingchu btn clearbtn">
+                <input type="button" value="添加" class="tianjia btn addbtn">
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <ul>
+        <li>查看待办事项</li>
+        <li>查看已完成事项</li>
+    </ul>
+</footer>
+</body>
+</html>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/rem.js"></script>
