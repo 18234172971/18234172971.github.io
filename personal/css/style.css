@@ -802,31 +802,25 @@ button.light {
 }
 @keyframes moveer {
   0%{
-    width: 0;
-  }
-  50%{
-    width: 150px;
+   transform:rotate(0deg) ;
   }
   100%{
-    width: 300px;
+    transform:rotate(720deg) ;
   }
 }
 @keyframes moveer1 {
   0%{
-    width: 0px;
-  }
-  50%{
-    width: 150px;
+    transform:rotate(0deg) ;
   }
   100%{
-    width: 300px;
+    transform:rotate(360deg) ;
   }
 }
-.zhuyao .movel{
+.zhuyao .move00{
   display: block;
   animation:moveer 2s linear infinite ;
 }
-.zhuyao .movel2{
+.zhuyao .move00{
   display: block;
   animation:moveer1 2s linear infinite ;
 }
@@ -835,10 +829,15 @@ button.light {
   margin: 30px auto;
   overflow: hidden;
 }
+.zhuyao .zhuyao-2{
+  width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
 .zhuyao .movel img{
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
+  width: 240px;
+  height: 240px;
   display: block;
   margin: 0 auto;
   box-shadow: 0px 0px 10px #000;
@@ -846,8 +845,8 @@ button.light {
 }
 .zhuyao .movel2 img{
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
+  width: 240px;
+  height: 240px;
   display: block;
   margin: 0 auto;
   box-shadow: 0px 0px 10px #000;

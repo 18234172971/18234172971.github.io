@@ -71,10 +71,15 @@ var head=document.querySelector("header");
   let zhuyao=document.querySelectorAll(".zhuyao-1");
   console.log(zhuyao);
   console.log(life);
-  // window.addEventListener("scroll", function (value) {
-  //   //点击滚动
-  //
-  //
-  // });
+
+  window.addEventListener("scroll", function (value) {
+    let obj = document.documentElement.scrollTop == 0 ? document.body : document.documentElement;
+    //点击滚动
+    if(life.offsetTop<=obj.scrollTop){
+      console.log(1);
+    }
+
+
+  });
 }
 
