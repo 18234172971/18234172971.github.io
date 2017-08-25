@@ -824,6 +824,9 @@ button.light {
   display: block;
   animation:moveer1 2s linear infinite ;
 }
+.zhuyao .move00:hover{
+  transform: rotate(0deg);
+}
 .zhuyao .zhuyao-1{
   width: 1200px;
   margin: 30px auto;
